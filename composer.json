@@ -7,5 +7,10 @@
     "autoload": {
         "files": [ "command.php" ]
     },
-    "require": {}
+    "require": {},
+    "extras": {
+        "commands": [
+            "db ack"
+        ]
+    }
 }
