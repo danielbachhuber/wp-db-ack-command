@@ -9,11 +9,20 @@ class WP_DB_Ack_Command {
 	/**
 	 * Search through the database.
 	 *
+	 * Like [ack](http://beyondgrep.com/), but for your WordPress database.
+	 * Searches through all or a selection of database tables for a given
+	 * string. Outputs colorized references to the string.
+	 *
+	 * Defaults to searching through all tables registered to `$wpdb`. On
+	 * multisite, this default is limited to the tables for the current site.
+	 *
+	 * ## OPTIONS
+	 *
 	 * <search>
 	 * : String to search for.
 	 *
 	 * [<tables>...]
-	 * : Tables to search through for the string.
+	 * : One or more tables to search through for the string.
 	 */
 	public function __invoke( $args, $assoc_args ) {
 		global $wpdb;
