@@ -1,17 +1,11 @@
-wp-db-ack-command
-=================================
+db-ack
+=================
 
 Search through the database.
 
-[![Build Status](https://travis-ci.org/danielbachhuber/wp-db-ack-command.svg?branch=master)](https://travis-ci.org/danielbachhuber/wp-db-ack-command)
+[![Build Status](https://travis-ci.org/runcommand/db-ack.svg?branch=master)](https://travis-ci.org/runcommand/db-ack)
 
-Quick links: [Installing](#installing) | [Using](#using) | [Contributing](#contributing)
-
-## Installing
-
-This package requires the latest nightly version of WP-CLI. Update with `wp cli update --nightly`.
-
-Once you've done so, you can install this package with `wp package install danielbachhuber/wp-db-ack-command`
+Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contributing)
 
 ## Using
 
@@ -37,9 +31,14 @@ multisite, this default is limited to the tables for the current site.
 
 
 
+## Installing
+
+This package requires the latest nightly version of WP-CLI. Update with `wp cli update --nightly`.
+
+Once you've done so, you can install this package with `wp package install runcommand/db-ack`
 
 ## Contributing
 
 Code and ideas are more than welcome.
 
-Please [open an issue](https://github.com/danielbachhuber/wp-db-ack-command/issues) with questions, feedback, and violent dissent. Pull requests are expected to include test coverage.
+Please [open an issue](https://github.com/runcommand/db-ack/issues) with questions, feedback, and violent dissent. Pull requests are expected to include test coverage.
