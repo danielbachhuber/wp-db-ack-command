@@ -4,7 +4,7 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 	return;
 }
 
-class WP_DB_Ack_Command {
+class Run_DB_Ack_Command {
 
 	/**
 	 * Search through the database.
@@ -90,4 +90,4 @@ class WP_DB_Ack_Command {
 	}
 
 }
-WP_CLI::add_command( 'db ack', 'WP_DB_Ack_Command' );
+WP_CLI::add_command( 'db ack', 'Run_DB_Ack_Command' );
