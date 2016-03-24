@@ -1,4 +1,4 @@
-db-ack
+runcommand/db-ack
 =================
 
 Search through the database.
@@ -33,7 +33,7 @@ multisite, this default is limited to the tables for the current site.
 
 ## Installing
 
-This package requires the latest nightly version of WP-CLI. Update with `wp cli update --nightly`.
+Installing this package requires WP-CLI v0.23.0 or greater. Update to the latest stable release with `wp cli update`.
 
 Once you've done so, you can install this package with `wp package install runcommand/db-ack`
 
