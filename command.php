@@ -23,6 +23,21 @@ class Run_DB_Ack_Command {
 	 *
 	 * [<tables>...]
 	 * : One or more tables to search through for the string.
+	 *
+	 * [--network]
+	 * : Search through all the tables registered to $wpdb in a multisite
+	 * install.
+	 *
+	 * [--all-tables-with-prefix]
+	 * : Search through all tables that match the registered table prefix, even
+	 * if not registered on $wpdb. On one hand, sometimes plugins use tables
+	 * without registering them to $wpdb. On another hand, this could return
+	 * tables you don't expect.
+	 *
+	 * [--all-tables]
+	 * : Search through ALL tables in the database, regardless of the prefix,
+	 * and even if not registered on $wpdb. Overrides --network and
+	 * --all-tables-with-prefix.
 	 */
 	public function __invoke( $args, $assoc_args ) {
 		global $wpdb;
