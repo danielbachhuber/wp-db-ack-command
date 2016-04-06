@@ -1,4 +1,4 @@
-db-ack
+runcommand/db-ack
 =================
 
 Search through the database.
@@ -11,7 +11,7 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 
 
 ~~~
-wp db ack <search> [<tables>...]
+wp db ack <search> [<tables>...] [--network] [--all-tables-with-prefix] [--all-tables]
 ~~~
 
 Like [ack](http://beyondgrep.com/), but for your WordPress database.
@@ -29,11 +29,26 @@ multisite, this default is limited to the tables for the current site.
 	[<tables>...]
 		One or more tables to search through for the string.
 
+	[--network]
+		Search through all the tables registered to $wpdb in a multisite
+		install.
+
+	[--all-tables-with-prefix]
+		Search through all tables that match the registered table prefix, even
+		if not registered on $wpdb. On one hand, sometimes plugins use tables
+		without registering them to $wpdb. On another hand, this could return
+		tables you don't expect.
+
+	[--all-tables]
+		Search through ALL tables in the database, regardless of the prefix,
+		and even if not registered on $wpdb. Overrides --network and
+		--all-tables-with-prefix.
+
 
 
 ## Installing
 
-This package requires the latest nightly version of WP-CLI. Update with `wp cli update --nightly`.
+Installing this package requires WP-CLI v0.23.0 or greater. Update to the latest stable release with `wp cli update`.
 
 Once you've done so, you can install this package with `wp package install runcommand/db-ack`
 
