@@ -13,6 +13,8 @@ class Run_DB_Ack_Command {
 	 * Searches through all or a selection of database tables for a given
 	 * string. Outputs colorized references to the string.
 	 *
+	 * ![Example of search for 'wordpress-development'](https://cloud.githubusercontent.com/assets/36432/14318557/4577836a-fbc2-11e5-9b2d-1c84f03a7c02.png)
+	 *
 	 * Defaults to searching through all tables registered to `$wpdb`. On
 	 * multisite, this default is limited to the tables for the current site.
 	 *
