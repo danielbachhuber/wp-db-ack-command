@@ -44,6 +44,15 @@ multisite, this default is limited to the tables for the current site.
 		and even if not registered on $wpdb. Overrides --network and
 		--all-tables-with-prefix.
 
+**EXAMPLES**
+
+    # Search through database for the 'wordpress-develop' string
+    $ wp db ack wordpress-develop
+    wp_options:option_value
+    1:http://wordpress-develop.dev
+    wp_options:option_value
+    2:http://wordpress-develop.dev
+
 
 
 ## Installing
