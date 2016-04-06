@@ -38,6 +38,15 @@ class Run_DB_Ack_Command {
 	 * : Search through ALL tables in the database, regardless of the prefix,
 	 * and even if not registered on $wpdb. Overrides --network and
 	 * --all-tables-with-prefix.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     # Search through database for the 'wordpress-develop' string
+	 *     $ wp db ack wordpress-develop
+	 *     wp_options:option_value
+	 *     1:http://wordpress-develop.dev
+	 *     wp_options:option_value
+	 *     2:http://wordpress-develop.dev
 	 */
 	public function __invoke( $args, $assoc_args ) {
 		global $wpdb;
@@ -57,6 +66,7 @@ class Run_DB_Ack_Command {
 					WP_CLI::log( WP_CLI::colorize( "%G{$table}:{$column}%n" ) );
 					$pk_val = WP_CLI::colorize( '%Y' . $result->$primary_key . '%n' );
 					$col_val = $result->$column;
+					$col_val = str_replace( $search, WP_CLI::colorize( '%3%k' . $search . '%n' ), $col_val );
 					WP_CLI::log( "{$pk_val}:{$col_val}" );
 				}
 			}
