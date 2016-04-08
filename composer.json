@@ -2,7 +2,14 @@
     "name": "runcommand/db-ack",
     "description": "Search through the database.",
     "license": "MIT",
-    "authors": [],
+    "authors": [
+        {
+            "name": "Daniel Bachhuber",
+            "email": "daniel@handbuilt.co",
+            "homepage": "http://runcommand.io",
+            "role": "Developer"
+        }
+    ],
     "minimum-stability": "dev",
     "autoload": {
         "files": [ "command.php" ]
