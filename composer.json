@@ -1,6 +1,6 @@
 {
     "name": "runcommand/db-ack",
-    "description": "Search through the database.",
+    "description": "Find a specific string in the database.",
     "license": "MIT",
     "authors": [
         {

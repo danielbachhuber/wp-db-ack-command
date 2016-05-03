@@ -7,7 +7,7 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 class Run_DB_Ack_Command {
 
 	/**
-	 * Search through the database.
+	 * Find a specific string in the database.
 	 *
 	 * Like [ack](http://beyondgrep.com/), but for your WordPress database.
 	 * Searches through all or a selection of database tables for a given

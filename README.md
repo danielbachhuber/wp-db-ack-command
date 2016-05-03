@@ -1,7 +1,7 @@
 runcommand/db-ack
 =================
 
-Search through the database.
+Find a specific string in the database.
 
 [![Build Status](https://travis-ci.org/runcommand/db-ack.svg?branch=master)](https://travis-ci.org/runcommand/db-ack)
 
