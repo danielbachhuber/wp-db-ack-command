@@ -11,7 +11,7 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 
 
 ~~~
-wp db ack <search> [<tables>...] [--network] [--all-tables-with-prefix] [--all-tables]
+wp db ack <search> [<tables>...] [--network] [--all-tables-with-prefix] [--all-tables] [--before_context=<num>] [--after_context=<num>]
 ~~~
 
 Like [ack](http://beyondgrep.com/), but for your WordPress database.
@@ -46,6 +46,18 @@ multisite, this default is limited to the tables for the current site.
 		and even if not registered on $wpdb. Overrides --network and
 		--all-tables-with-prefix.
 
+	[--before_context=<num>]
+		Number of characters to display before the match (for large blobs).
+		---
+		default: 40
+		---
+
+	[--after_context=<num>]
+		Number of characters to display after the match (for large blobs).
+		---
+		default: 40
+		---
+
 **EXAMPLES**
 
     # Search through database for the 'wordpress-develop' string
@@ -61,7 +73,7 @@ multisite, this default is limited to the tables for the current site.
 
 Installing this package requires WP-CLI v0.23.0 or greater. Update to the latest stable release with `wp cli update`.
 
-Once you've done so, you can install this package with `wp package install runcommand/db-ack`
+Once you've done so, you can install this package with `wp package install runcommand/db-ack`.
 
 ## Contributing
 
