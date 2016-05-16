@@ -41,6 +41,18 @@ class Run_DB_Ack_Command {
 	 * and even if not registered on $wpdb. Overrides --network and
 	 * --all-tables-with-prefix.
 	 *
+	 * [--before_context=<num>]
+	 * : Number of characters to display before the match (for large blobs).
+	 * ---
+	 * default: 40
+	 * ---
+	 *
+	 * [--after_context=<num>]
+	 * : Number of characters to display after the match (for large blobs).
+	 * ---
+	 * default: 40
+	 * ---
+	 *
 	 * ## EXAMPLES
 	 *
 	 *     # Search through database for the 'wordpress-develop' string
@@ -54,6 +66,8 @@ class Run_DB_Ack_Command {
 		global $wpdb;
 
 		$search = array_shift( $args );
+		$before_context = \WP_CLI\Utils\get_flag_value( $assoc_args, 'before_context', 40 );
+		$after_context = \WP_CLI\Utils\get_flag_value( $assoc_args, 'after_context', 40 );
 
 		// Avoid constant redefinition in wp-config
 		@WP_CLI::get_runner()->load_wordpress();
@@ -68,7 +82,16 @@ class Run_DB_Ack_Command {
 					WP_CLI::log( WP_CLI::colorize( "%G{$table}:{$column}%n" ) );
 					$pk_val = WP_CLI::colorize( '%Y' . $result->$primary_key . '%n' );
 					$col_val = $result->$column;
-					$col_val = str_replace( $search, WP_CLI::colorize( '%3%k' . $search . '%n' ), $col_val );
+					$safe_search = preg_quote( $search, '#' );
+					$before_context = '' === $before_context ? $before_context : (int) $before_context;
+					$after_context = '' === $after_context ? $after_context : (int) $after_context;
+					$search_regex = '#(.{0,' . $before_context . '})(' . $safe_search .')(.{0,' . $after_context . '})#i';
+					preg_match_all( $search_regex , $col_val, $matches );
+					$bits = array();
+					foreach( $matches[0] as $key => $value ) {
+						$bits[] = $matches[1][ $key ] . WP_CLI::colorize( '%3%k' . $matches[2][ $key ] . '%n' ) . $matches[3][ $key ];
+					}
+					$col_val = implode( ' [...] ', $bits );
 					WP_CLI::log( "{$pk_val}:{$col_val}" );
 				}
 			}
