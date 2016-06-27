@@ -1,13 +1,13 @@
 {
     "name": "runcommand/db-ack",
     "description": "Find a specific string in the database.",
+    "homepage": "https://runcommand.io/wp/db-ack/",
     "license": "MIT",
     "authors": [
         {
             "name": "Daniel Bachhuber",
-            "email": "daniel@handbuilt.co",
-            "homepage": "http://runcommand.io",
-            "role": "Developer"
+            "email": "daniel@runcommand.io",
+            "homepage": "https://runcommand.io"
         }
     ],
     "minimum-stability": "dev",
