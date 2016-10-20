@@ -1,6 +1,7 @@
 {
     "name": "runcommand/db-ack",
     "description": "Find a specific string in the database.",
+    "type": "wp-cli-package",
     "homepage": "https://runcommand.io/wp/db-ack/",
     "license": "MIT",
     "authors": [
