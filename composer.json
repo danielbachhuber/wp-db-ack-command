@@ -16,11 +16,15 @@
         "files": [ "command.php" ]
     },
     "require": {},
-    "extras": {
+    "extra": {
         "commands": [
             "db ack"
         ],
         "readme": {
+            "shields": [
+                "[![runcommand open source](https://runcommand.io/wp-content/themes/runcommand-theme/bin/shields/runcommand-open-source.svg)](https://runcommand.io/pricing/)",
+                "[![Build Status](https://travis-ci.org/runcommand/db-ack.svg?branch=master)](https://travis-ci.org/runcommand/db-ack)"
+            ],
             "sections": [
                 "Using",
                 "Installing",
