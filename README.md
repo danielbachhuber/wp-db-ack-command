@@ -1,6 +1,12 @@
 runcommand/db-ack
 =================
 
+# DEPRECATED
+
+You should use `wp db search` instead: https://developer.wordpress.org/cli/commands/db/search/
+
+# DEPRECATED
+
 Find a specific string in the database.
 
 [![runcommand open source](https://runcommand.io/wp-content/themes/runcommand-theme/bin/shields/runcommand-open-source.svg)](https://runcommand.io/pricing/) [![Build Status](https://travis-ci.org/runcommand/db-ack.svg?branch=master)](https://travis-ci.org/runcommand/db-ack)
